@@ -1,0 +1,141 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 60px;
+  #content {
+    padding-top: 20px;
+    padding-bottom: 250px;
+    margin-bottom: 20px;
+    min-height: 100vh;
+  }
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+/* header */
+
+.nav {
+  li {
+    font-size: 1.2em;
+  }
+}
+
+#logo {
+  bottom: 0;
+  float: left;
+  margin-right: 10px;
+  font-size: 2em;
+  color: gray;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: $gray-dark;
+    text-decoration: none;
+  }
+}
+
+
+/* footer */
+
+footer {
+  height: 250px;
+  margin-top: -250px;
+  padding-top: 5px;
+  border-top: 1px solid black;
+  background-color: $gray-dark;
+  color: white;
+  .row {
+    margin-top: 25px;
+  }
+}
+
+/* landing page */
+.jumbotron img {
+    max-height: 250px;
+    float: right;
+}
+
+#front-page {
+  margin-bottom: 250px;
+  img {
+    margin-bottom: 15px;
+    max-height: 150px;
+  }
+  p {
+    font-size: 1.3em;
+  }
+}
+/* about page */
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.8em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: $gray-dark;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* buttons */
+
+.btn-xlg {
+  padding: 18px 28px;
+  font-size: 20px; //change this to your desired size
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+/* errors */
+
+#error_explanation {
+  color: $state-danger-text;
+  ul {
+    color: $state-danger-text;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  color: $state-danger-text;
+  .form-control {
+    color: $state-danger-text;
+  }
+}

@@ -1,0 +1,34 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <% if current_user == event.manager %>
+        <th>Attendees</th>
+      <% end %>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% event_times.each do |event_time| %>
+      <tr>
+        <td><%= datetime_formatter(event_time.start_time) %></td>
+        <td><%= datetime_formatter(event_time.end_time) %></td>
+        <% if current_user == event.manager %>
+          <td><%= link_to "#{event_time.tickets.count}", event_event_time_path(event, event_time), class: "btn btn-primary" %></td>
+        <% end %>
+        <% if current_user == event.manager && event_time.upcoming? %>
+          <td><%= link_to "edit", edit_event_event_time_path(event, event_time), class: "btn btn-default" %></td>
+        <% end %>
+        <% if event_time.upcoming? %>
+          <td>
+            <%= form_for(ticket) do |f| %>
+              <%= f.hidden_field :event_time_id, :value => event_time.id %>
+              <%= f.submit 'buy ticket', class: 'btn btn-primary' %>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
